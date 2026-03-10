@@ -3,7 +3,7 @@ package com.radlands.model.card;
 import java.util.List;
 
 import com.radlands.model.Ability;
-import com.radlands.model.CardState;
+import com.radlands.model.card.CardState;
 import com.radlands.model.Effect;
 
 public abstract class JunkableCard extends BaseCard {

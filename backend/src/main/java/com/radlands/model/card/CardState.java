@@ -1,4 +1,4 @@
-package com.radlands.model;
+package com.radlands.model.card;
 
 public enum CardState {
     INTACT,
