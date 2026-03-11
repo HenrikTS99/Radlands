@@ -5,4 +5,8 @@ import PlayArea from '@/components/board/PlayArea.vue';
   <PlayArea />
 </template>
 
-<style scoped></style>
+<style>
+* {
+  background-color: #1a1b27;
+}
+</style>

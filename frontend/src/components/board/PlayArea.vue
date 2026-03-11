@@ -7,7 +7,8 @@ import type { Card } from '@/types/card';
 </script>
 
 <template>
-  <PlayerBase />
+  <PlayerBase :isSelf="false" />
+  <PlayerBase :isSelf="true" />
 </template>
 
 <style scoped></style>

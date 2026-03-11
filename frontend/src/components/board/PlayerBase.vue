@@ -26,9 +26,14 @@ const raiders: Card = {
   imageName: "raiders",
   type: "EVENT"
 }
+
+defineProps<{
+  isSelf: boolean
+}>()
+
 </script>
 <template>
-  <div class="base" id="self-base">
+  <div class="base" :id="isSelf ? 'self-base' : 'enemy-base'">
     <div class="card-column event-column">
       <CardContainer />
       <CardContainer />
@@ -63,7 +68,13 @@ const raiders: Card = {
 .base {
   display: flex;
   justify-content: center;
-  margin-top: auto;
+}
+
+#self-base {}
+
+#enemy-base {
+  transform: scaleY(-1);
+  transform: rotate(180deg);
 }
 
 .card-columns-container {
@@ -75,14 +86,14 @@ const raiders: Card = {
 .card-column {
   border: 3px solid black;
   border-radius: 8px;
-  margin: 1px;
+  margin: 1em;
 }
 
 .event-column {
-  margin-right: 5em;
+  margin-right: 3em;
 }
 
 .bonus-column {
-  margin-left: 2em;
+  margin-left: 3em;
 }
 </style>
