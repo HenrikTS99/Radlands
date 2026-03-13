@@ -13,16 +13,73 @@ public class Player {
     private int water;
     private List<CampCard> camps;
     private boolean waterSiloOnHand;
-    private boolean raiderOnHand;
+    private boolean raiderInPlay;
     private BaseCard[][] playArea = new BaseCard[3][3];
     private EventCard[] eventQueue = new EventCard[3];
 
     public Player(List<JunkableCard> playerHand, int water, List<CampCard> camps, boolean waterSiloOnHand,
-            boolean raiderOnHand) {
+            boolean raiderInPlay) {
         this.playerHand = playerHand;
         this.water = water;
         this.camps = camps;
         this.waterSiloOnHand = waterSiloOnHand;
-        this.raiderOnHand = raiderOnHand;
+        this.raiderInPlay = raiderInPlay;
     }
+
+    public List<JunkableCard> getPlayerHand() {
+        return playerHand;
+    }
+
+    public void setPlayerHand(List<JunkableCard> playerHand) {
+        this.playerHand = playerHand;
+    }
+
+    public int getWater() {
+        return water;
+    }
+
+    public void setWater(int water) {
+        this.water = water;
+    }
+
+    public List<CampCard> getCamps() {
+        return camps;
+    }
+
+    public void setCamps(List<CampCard> camps) {
+        this.camps = camps;
+    }
+
+    public boolean isWaterSiloOnHand() {
+        return waterSiloOnHand;
+    }
+
+    public void setWaterSiloOnHand(boolean waterSiloOnHand) {
+        this.waterSiloOnHand = waterSiloOnHand;
+    }
+
+    public boolean isRaiderInPlay() {
+        return raiderInPlay;
+    }
+
+    public void setRaiderInPlay(boolean raiderInPlay) {
+        this.raiderInPlay = raiderInPlay;
+    }
+
+    public BaseCard[][] getPlayArea() {
+        return playArea;
+    }
+
+    public void setPlayArea(BaseCard[][] playArea) {
+        this.playArea = playArea;
+    }
+
+    public EventCard[] getEventQueue() {
+        return eventQueue;
+    }
+
+    public void setEventQueue(EventCard[] eventQueue) {
+        this.eventQueue = eventQueue;
+    }
+
 }
