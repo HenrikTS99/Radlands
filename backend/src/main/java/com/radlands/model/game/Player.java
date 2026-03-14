@@ -17,6 +17,15 @@ public class Player {
     private BaseCard[][] playArea = new BaseCard[3][3];
     private EventCard[] eventQueue = new EventCard[3];
 
+    public Player() {
+        this.playerHand = new ArrayList<JunkableCard>();
+        this.water = 3; // TODO: remove once proper logic for giving water
+        this.camps = new ArrayList<CampCard>();
+        this.waterSiloOnHand = false;
+        this.raiderInPlay = false;
+    }
+
+    // contructor uneccesary?
     public Player(List<JunkableCard> playerHand, int water, List<CampCard> camps, boolean waterSiloOnHand,
             boolean raiderInPlay) {
         this.playerHand = playerHand;
