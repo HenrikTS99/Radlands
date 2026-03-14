@@ -9,8 +9,8 @@ import com.radlands.model.Effect;
 public class EventCard extends JunkableCard {
     private int queue;
 
-    public EventCard(Effect junkEffect, int queue, String name, String description, int cost, List<Ability> abilities,
-            CardState state) {
+    public EventCard(Effect junkEffect, String name, String description, int cost, List<Ability> abilities,
+            CardState state, int queue) {
         super(junkEffect, name, description, cost, abilities, state);
         this.queue = queue;
     }
