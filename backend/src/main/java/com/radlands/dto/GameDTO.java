@@ -6,14 +6,13 @@ import com.radlands.model.game.Game;
 import com.radlands.model.game.Player;
 
 // TODO: add discard pile data?
-// TODO: Players to be PlayerDTO, should not include player hand!
 public record GameDTO(
-        List<Player> players,
+        List<PlayerDTO> players,
         int deckSize,
         int turn) {
     public GameDTO(Game game) {
         this(
-                game.getPlayers(),
+                game.getPlayersDTO(),
                 game.getDrawDeckSize(),
                 game.getTurn());
     }

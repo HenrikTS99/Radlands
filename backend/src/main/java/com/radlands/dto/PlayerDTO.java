@@ -9,7 +9,6 @@ import com.radlands.model.card.JunkableCard;
 import com.radlands.model.game.Player;
 
 public record PlayerDTO(
-        List<JunkableCard> playerHand,
         int water,
         List<CampCard> camps,
         boolean waterSiloOnHand,
@@ -18,7 +17,6 @@ public record PlayerDTO(
         EventCard[] eventQueue) {
     public PlayerDTO(Player player) {
         this(
-                player.getPlayerHand(),
                 player.getWater(),
                 player.getCamps(),
                 player.isWaterSiloOnHand(),
