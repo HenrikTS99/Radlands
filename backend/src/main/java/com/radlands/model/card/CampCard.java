@@ -8,9 +8,9 @@ import com.radlands.model.card.CardState;
 public class CampCard extends BaseCard {
     private int startAmount;
 
-    public CampCard(String name, String description, int cost, List<Ability> abilities,
+    public CampCard(String name, String description, List<Ability> abilities,
             CardState state, int startAmount) {
-        super(name, description, cost, abilities, state);
+        super(name, description, abilities, state);
         this.startAmount = startAmount;
     }
 
