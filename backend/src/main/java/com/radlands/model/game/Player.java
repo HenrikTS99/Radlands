@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
+    private Long id;
     private List<JunkableCard> playerHand;
     private int water;
     private List<CampCard> camps;
@@ -17,7 +18,8 @@ public class Player {
     private BaseCard[][] playArea = new BaseCard[3][3];
     private EventCard[] eventQueue = new EventCard[3];
 
-    public Player() {
+    public Player(Long id) {
+        this.id = id;
         this.playerHand = new ArrayList<JunkableCard>();
         this.water = 3; // TODO: remove once proper logic for giving water
         this.camps = new ArrayList<CampCard>();
@@ -89,6 +91,14 @@ public class Player {
 
     public void setEventQueue(EventCard[] eventQueue) {
         this.eventQueue = eventQueue;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

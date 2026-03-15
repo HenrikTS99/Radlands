@@ -21,8 +21,12 @@ public class GameService {
         currGame = new Game();
     }
 
-    public GameDTO getGameDTO() {
+    public GameDTO getGame() {
         return new GameDTO(currGame);
+    }
+
+    public GameDTO getGame(Long requestingPlayerId) {
+        return currGame.toDTO(requestingPlayerId);
     }
 
     // public GameDTO performAction(Game game, GameAction action) {

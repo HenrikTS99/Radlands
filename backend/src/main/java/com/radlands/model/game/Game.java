@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.radlands.data.DeckData;
+import com.radlands.dto.GameDTO;
 import com.radlands.dto.PlayerDTO;
 import com.radlands.model.game.*;
 
@@ -20,8 +21,8 @@ public class Game {
     }
 
     private List<Player> createPlayers() {
-        Player player1 = new Player();
-        Player player2 = new Player();
+        Player player1 = new Player(1L);
+        Player player2 = new Player(2L);
         return List.of(player1, player2);
     }
 
@@ -33,6 +34,17 @@ public class Game {
         return players.stream()
                 .map(PlayerDTO::new)
                 .toList();
+    }
+
+    public GameDTO toDTO(Long requestingPlayerId) {
+
+        for (Player player : players) {
+            if (player.getId().equals(requestingPlayerId)) {
+                return new GameDTO(this, requestingPlayerId, player.getPlayerHand());
+            }
+        }
+
+        return new GameDTO(this);
     }
 
     public void setPlayers(List<Player> players) {
