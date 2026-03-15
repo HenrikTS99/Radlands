@@ -5,25 +5,26 @@ import java.util.ArrayList;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.radlands.model.game.*;
-import com.radlands.dto.PlayerDTO;
+import com.radlands.service.GameService;
+import com.radlands.dto.*;
 
 @RestController
 @RequestMapping()
 public class GameController {
-    private Player player1 = new Player(new ArrayList<>(), 2, new ArrayList<>(), true, true);
-    private Player player2 = new Player(new ArrayList<>(), 2, new ArrayList<>(), true, true);
-    private ArrayList<Player> players = new ArrayList<>();
 
-    public GameController() {
-        players.add(player2);
-        players.add(player1);
+    private final GameService gameService;
+
+    public GameController(GameService gameService) {
+        this.gameService = gameService;
     }
 
-    // @GetMapping("/state")
-    // public GameDTO getGameState(@SessionAttribute Long playerId) {
-    //
-    // }
-    //
+    @GetMapping("game")
+    public ResponseEntity<GameDTO> getGameState() {
+        GameDTO gameDTO = gameService.getGameDTO();
+        return ResponseEntity.ok(gameDTO);
+
+    }
+
     // @PostMapping("/action")
     // public GameDTO handleAction(@Requestbody GameAction action, @SessionAttribute
     // Long playerId) {
@@ -44,6 +45,5 @@ public class GameController {
         Player player = players.get(index);
         PlayerDTO playerDTO = new PlayerDTO(player);
         return ResponseEntity.ok(playerDTO);
-
     }
 }
