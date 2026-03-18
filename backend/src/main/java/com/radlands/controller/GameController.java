@@ -21,6 +21,7 @@ public class GameController {
         this.gameService = gameService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("game")
     public ResponseEntity<GameDTO> getGameState(@RequestParam(required = false) Long playerId) {
         if (playerId == null) {
