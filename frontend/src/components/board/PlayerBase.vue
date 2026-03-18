@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import CardContainer from '@/components/card/CardContainer.vue';
 import type { Card } from '@/types/card';
 

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.radlands.model.card.JunkableCard;
 import com.radlands.model.game.Game;
-import com.radlands.model.game.Player;
 
 // TODO: add discard pile data?
 public record GameDTO(

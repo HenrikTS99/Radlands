@@ -5,7 +5,6 @@ import java.util.List;
 import com.radlands.model.card.BaseCard;
 import com.radlands.model.card.CampCard;
 import com.radlands.model.card.EventCard;
-import com.radlands.model.card.JunkableCard;
 import com.radlands.model.game.Player;
 
 public record PlayerDTO(
